@@ -1,0 +1,31 @@
+package com.pension.sevice;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pension.entity.Pensioner;
+import com.pension.repo.IPensionerRepository;
+
+@Service
+public class IPensionerServiceImpl implements IPensionerService {
+	@Autowired
+	IPensionerRepository iPensionerRepository;
+
+	@Override
+	public void saveall(Pensioner pensioner) {
+		iPensionerRepository.saveall(pensioner);
+		
+	}
+
+	@Override
+	public Optional<Pensioner> getByAadahr(long no) {
+		return iPensionerRepository.getByAadharNo(no);
+		
+		
+	}
+	
+	
+
+}

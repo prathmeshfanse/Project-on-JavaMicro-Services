@@ -1,0 +1,38 @@
+package com.pension.controller;
+
+import java.awt.geom.Ellipse2D;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pension.entity.Pensioner;
+import com.pension.repo.IPensionerRepository;
+import com.pension.sevice.IPensionerService;
+
+@RestController
+public class PensionerController {
+	@Autowired
+	IPensionerRepository iPensionerRepository;
+	
+	@Autowired
+	IPensionerService iPensionerService;
+	/*
+	 * @PostMapping("/emp")
+	public ResponseEntity<?> addEmployee(@RequestBody Employee employee){
+		ResponseEntity<?> emp = iEmployeeService.addEmployee(employee);
+		return ResponseEntity.ok(emp);
+	}
+	 */
+	@PostMapping("/pensioner")
+	public ResponseEntity<?> createPensioner(@RequestBody Pensioner pensioner)
+	{
+		ResponseEntity<?> pension = iPensionerService.saveall(pensioner);
+				return ResponseEntity.ok(pensioner);
+
+	}
+}

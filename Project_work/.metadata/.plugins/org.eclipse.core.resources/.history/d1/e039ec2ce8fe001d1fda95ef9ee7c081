@@ -1,0 +1,13 @@
+package com.pension.sevice;
+
+import java.util.Optional;
+
+import com.pension.entity.Pensioner;
+
+public interface IPensionerService {
+	public void saveall(Pensioner pensioner);
+	
+	Optional<Pensioner> getByAadhar(long no);
+	
+
+}

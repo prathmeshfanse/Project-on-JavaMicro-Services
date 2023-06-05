@@ -1,0 +1,18 @@
+package com.pension.repo;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pension.entity.Pensioner;
+
+@Repository
+public interface IPensionerRepository extends JpaRepository<Pensioner,Long> {
+	public void saveall(Pensioner pensioner);
+
+	public Optional<Pensioner> getByAadharNo(long no);
+	
+	
+
+}

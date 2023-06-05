@@ -1,0 +1,5 @@
+package com.pension.entity;
+
+public class Bank {
+
+}

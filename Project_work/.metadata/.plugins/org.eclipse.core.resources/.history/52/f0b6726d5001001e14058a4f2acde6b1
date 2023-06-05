@@ -1,0 +1,40 @@
+package com.bamk.entity;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="bank")
+public class Bank {
+	private long AccNo;
+	private float pensionAmt;
+	private float BankServiceCharge;
+	public Bank(long AccNo, float pensionAmt, float bankServiceCharge) {
+		super();
+		this.AccNo = AccNo;
+		this.pensionAmt = pensionAmt;
+		BankServiceCharge = bankServiceCharge;
+	}
+	public Bank() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public long getAccNo() {
+		return AccNo;
+	}
+	public void setAccNo(long accNo) {
+		this.AccNo = accNo;
+	}
+	public float getPensionAmt() {
+		return pensionAmt;
+	}
+	public void setPensionAmt(float pensionAmt) {
+		this.pensionAmt = pensionAmt;
+	}
+	public float getBankServiceCharge() {
+		return BankServiceCharge;
+	}
+	public void setBankServiceCharge(float bankServiceCharge) {
+		BankServiceCharge = bankServiceCharge;
+	}
+	
+	
+}

@@ -1,0 +1,27 @@
+package com.bank.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+
+import com.bamk.entity.Bank;
+import com.bank.repo.BankRepository;
+
+public class BankServiceImpl implements IBankService {
+
+	@Autowired
+	BankRepository bankRepository;
+	
+	@Override
+	public ResponseEntity<?> getBankofPensioner(Long aadharNo) {
+		return ResponseEntity.ok(this.bankRepository.findById(aadharNo));
+		}
+
+	@Override
+	public ResponseEntity<?> savebank(Bank bank) {
+		Bank b = this.bankRepository.save(bank);
+		return ResponseEntity.ok(b);
+	}
+
+}

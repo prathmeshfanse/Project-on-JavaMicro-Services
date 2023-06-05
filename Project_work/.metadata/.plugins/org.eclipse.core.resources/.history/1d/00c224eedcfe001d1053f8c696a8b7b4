@@ -1,0 +1,5 @@
+package com.pension.sevice;
+
+public class IPensionerServiceImpl {
+
+}

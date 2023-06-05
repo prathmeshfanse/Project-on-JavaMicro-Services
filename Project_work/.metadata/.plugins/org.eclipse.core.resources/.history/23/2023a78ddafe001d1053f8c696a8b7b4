@@ -1,0 +1,5 @@
+package com.pension.repo;
+
+public class IPenasionerRepository {
+
+}

@@ -1,0 +1,8 @@
+package com.pension.sevice;
+
+import com.pension.entity.Pensioner;
+
+public interface IPensionerService {
+	public void saveall(Pensioner pensioner);
+
+}

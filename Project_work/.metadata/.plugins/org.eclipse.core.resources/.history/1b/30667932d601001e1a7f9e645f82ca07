@@ -1,0 +1,40 @@
+package com.pension.controller;
+
+import javax.annotation.Generated;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pension.entity.Pensioner;
+import com.pension.repo.IPensionerRepository;
+import com.pension.sevice.IPensionerService;
+
+@RestController
+@RequestMapping("/pensioner")
+public class PensionerController {
+	@Autowired
+	IPensionerRepository iPensionerRepository;
+	
+	@Autowired
+	IPensionerService iPensionerService;
+	
+	@PostMapping("/add")
+	public ResponseEntity<?> createPensioner(@RequestBody Pensioner pensioner)
+	{
+		ResponseEntity<?> pension = iPensionerService.saveall(pensioner);
+				return ResponseEntity.ok(pensioner);
+
+	}
+	
+	@GetMapping("/{addharNo}")
+	public ResponseEntity<?> getPensioner(@PathVariable("addharNo") Long addharNo){
+		return this.iPensionerService.getByAadhar(addharNo);
+		
+	}
+}
